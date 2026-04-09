@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея портфолио - Abbasov</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Моё Портфолио</h2>
+        <div class="text-center mb-4">
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-primary" onclick="filterGallery('all')">Все</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('web')">Веб-дизайн</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('photo')">Фотография</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('graphic')">Графика</button>
+            </div>
+        </div>
+
+        <div class="row g-3" id="gallery">
+            <div class="col-6 col-md-4 gallery-item" data-category="web">
+                <div class="card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5nex7ABFSP7IkD5EhT6HY4Gqaku7480VDlQ&s"
+                        class="card-img-top" alt="Корпоративный сайт">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-0">Корпоративный сайт</h6>
+                        <small class="text-muted">Веб-дизайн</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 gallery-item" data-category="web">
+                <div class="card h-100">
+                    <img src="https://doorsystems.ru/upload/iblock/8fc/8fc45965c28c5aa43c5d1c79cee614ff.png"
+                        class="card-img-top" alt="Интернет-магазин">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-0">Интернет-магазин</h6>
+                        <small class="text-muted">Веб-дизайн</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 gallery-item" data-category="photo">
+                <div class="card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaC0BiI29Iy8SCJpr4gaZzHlLAvIuAQULdPQ&s"
+                        class="card-img-top" alt="Пейзаж">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-0">Горный пейзаж</h6>
+                        <small class="text-muted">Фотография</small>
+                    </div>
+                </div>
+            </div>
+            <div c lass="col-6 col-md-4 gallery-item" data-category="photo">
+                <div class="card h-100">
+                    <img src="https://thb.tildacdn.com/tild3636-6365-4932-a236-323334316139/-/resize/504x/1YrYLQcDWs0.jpg"
+                        class="card-img-top" alt="Портрет">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-0">Портрет</h6>
+                        <small class="text-muted">Фотография</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 gallery-item" data-category="graphic">
+                <div class="card h-100">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/81a4e680815973.5cec6bcf6aa1a.jpg"
+                        class="card-img-top" alt="Логотип">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-0">Логотип бренда</h6>
+                        <small class="text-muted">Графика</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 gallery-item" data-category="graphic">
+                <div class="card h-100">
+                    <img src="https://img.freepik.com/free-photo/working-with-device-lifestyle_23-2151848756.jpg?semt=ais_hybrid&w=740&q=80"
+                        class="card-img-top" alt="Иллюстрация">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-0">Иллюстрация</h6>
+                        <small class="text-muted">Графика</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.btn-group .btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            const currentButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(`'${category}'`));
+            if (currentButton) currentButton.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        window.onload = function () {
+            filterGallery('all');
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
