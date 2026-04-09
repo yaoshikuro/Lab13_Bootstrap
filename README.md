@@ -19,11 +19,11 @@
 
 ## Структура
 Lab13_Bootstrap_Abbasov/
-|── index.html
-|── timeline.html
-|── custom.css
-|── img/ (скриншоты)
-|__ README.md
+├── index.html
+├── timeline.html
+├── custom.css
+├── img/ (скриншоты)
+└── README.md
 
 
 ## Как запустить
