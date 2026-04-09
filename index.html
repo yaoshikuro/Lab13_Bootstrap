@@ -122,6 +122,64 @@
         })();
     </script>
     <div class="container my-5" id="about">
+        <div class="container my-5">
+            <h2 class="text-center mb-5">Интерактивные компоненты</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>Модальное окно</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Открыть окно
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Добро пожаловать!</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Пример модального окна Bootstrap.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Закрыть</button>
+                                    <button type="button" class="btn btn-primary">Сохранить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4>Аккордеон</h4>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    Что такое Bootstrap?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">Bootstrap — CSS-фреймворк для адаптивной вёрстки.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                    Почему Bootstrap?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">Готовые компоненты, сетка, адаптивность.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <h2 class="text-center mb-5">О компании</h2>
         <div class="row">
             <div class="col-md-6 mb-4">
@@ -173,6 +231,37 @@
             </div>
         </div>
     </div>
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>О компании</h5>
+                    <p>Создаём современные веб-решения для бизнеса.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Быстрые ссылки</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50">Главная</a></li>
+                        <li><a href="#services" class="text-white-50">Услуги</a></li>
+                        <li><a href="#about" class="text-white-50">О нас</a></li>
+                        <li><a href="#contact" class="text-white-50">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li>Email: info@myportfolio.com</li>
+                        <li>Телефон: +7 (999) 123-45-67</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2026 MyPortfolio. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
